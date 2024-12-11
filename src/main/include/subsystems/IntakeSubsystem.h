@@ -1,8 +1,6 @@
 #ifndef INTAKESUBSYSTEM_H
 #define INTAKESUBSYSTEM_H
 
-#include "Constants.h"
-
 #include <frc2/command/SubsystemBase.h>
 
 #include <rev/CANSparkMax.h>
@@ -14,7 +12,7 @@
 class IntakeSubsystem : public frc2::SubsystemBase {
     public:
         IntakeSubsystem(
-            int roller_motor_can_id, 
+            int roller_motor_can_id,
             int piece_sensor_di_ch,
             int transfer_motor_id
         );
@@ -25,8 +23,6 @@ class IntakeSubsystem : public frc2::SubsystemBase {
         void SetTransferPower(double power);
 
         bool HasPiece();
-
-        void OpenLoopTestMotors(double drive_power, double tranfer_power);
 
     private:
         rev::CANSparkMax _roller_motor;

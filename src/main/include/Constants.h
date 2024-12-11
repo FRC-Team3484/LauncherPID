@@ -24,7 +24,7 @@ namespace IntakeConstants {
     constexpr double TRANSFER_EJECT = -0.8;
     constexpr double TRANSFER_INTAKE = 0.4;
 
-    constexpr bool TRANSFER_MOTOR_INVERTED = false;
+    constexpr bool TRANSFER_MOTOR_INVERTED = true;
 
     // Current limits
     constexpr uint ROLLER_STALL_LIMIT = 60;

@@ -24,15 +24,11 @@ void Robot::AutonomousPeriodic() {}
 
 void Robot::AutonomousExit() {}
 
-void Robot::TeleopInit() {
-  _launch_command.Schedule();
-}
+void Robot::TeleopInit() {}
 
 void Robot::TeleopPeriodic() {}
 
-void Robot::TeleopExit() {
-  _launch_command.Cancel();
-}
+void Robot::TeleopExit() {}
 
 void Robot::TestInit() {
   frc2::CommandScheduler::GetInstance().CancelAll();

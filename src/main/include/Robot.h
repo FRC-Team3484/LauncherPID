@@ -7,9 +7,6 @@
 
 #include "OI.h"
 #include "Constants.h"
-#include "subsystems/IntakeSubsystem.h"
-#include "subsystems/LauncherSubsystem.h"
-#include "commands/TeleopLaunchCommand.h"
 
 #include <frc/TimedRobot.h>
 #include <frc2/command/CommandPtr.h>
@@ -43,11 +40,8 @@ class Robot : public frc::TimedRobot {
         Operator_Interface _oi_operator{};
 
         // Subsystems
-        IntakeSubsystem _intake_subsystem{IntakeConstants::ROLLER_MOTOR_CAN_ID, IntakeConstants::PIECE_SENSOR_DI_CH, IntakeConstants::TRANSFER_MOTOR_CAN_ID};
-        LauncherSubsystem _launcher_subsystem{LauncherConstants::LEFT_MOTOR_CAN_ID, LauncherConstants::RIGHT_MOTOR_CAN_ID, LauncherConstants::LAUNCH_SENSOR_DI_CH, LauncherConstants::LEFT_PID_CONSTANTS, LauncherConstants::RIGHT_PID_CONSTANTS, LauncherConstants::RPM_WINDOW_RANGE};
-
+        
         //Commands
-        TeleopLaunchCommand _launch_command{&_launcher_subsystem, &_intake_subsystem, &_oi_operator};
 };
 
 #endif

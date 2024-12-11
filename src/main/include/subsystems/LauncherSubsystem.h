@@ -15,18 +15,18 @@
 class LauncherSubsystem : public frc2::SubsystemBase {
     public:
         LauncherSubsystem(
-            int bottom_motor_can_id, 
+            int bottom_motor_can_id,
             int top_motor_can_id,
             int launch_sensor_di_ch,
-            SC::SC_PIDConstants _bottom_pidc,
-            SC::SC_PIDConstants _top_pidc,
+            SC::SC_PIDConstants bottom_pidc,
+            SC::SC_PIDConstants top_pidc,
             double rpm_window
         );
 
         void Periodic() override;
+        
         void SetLauncherSpeed(units::revolutions_per_minute_t speed);
         bool AtTargetRPM();
-        void OpenLoopTestMotors(double power_bottom, double power_top);
         bool GetLaunchSensor();
 
     private:
